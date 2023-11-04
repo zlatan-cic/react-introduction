@@ -1,13 +1,20 @@
 // import Greadtings from "./components/Greadtings";
 
-import AgeCount from "./components/AgeCount";
+import { Car } from "./components/Car/Car";
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <AgeCount/>
+
+  const hello = (value) => {
+    alert("Hello from <App/>" + value)
+  }
+  return(
+    <div>
+      <h1 onClick={hello}>I am the {"<App/ >"}</h1>
+      <Car onCarClick={hello}/>
     </div>
-  );
+  )
 }
 
 export default App;
