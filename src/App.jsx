@@ -11,6 +11,8 @@ function App() {
     setCurentDifficulty(difficulty);
   };
 
+  // test
+
   return (
     <div>
       <div>
