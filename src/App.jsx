@@ -1,20 +1,28 @@
-// import Greadtings from "./components/Greadtings";
+import { useState } from "react";
+import { DisplayDifficulty } from "./components/DisplayDifficulty/DisplayDifficulty";
+import { MenuList } from "./components/MenuList/MenuList";
+import { MenuListitem } from "./components/MenuListitem/MenuListitem";
 
-import { Car } from "./components/Car/Car";
-
-
-
+import Style from "./style.module.css";
 function App() {
+  const [currentDifficulty, setCurentDifficulty] = useState("");
 
-  const hello = (value) => {
-    alert("Hello from <App/>" + value)
-  }
-  return(
+  const onMenuListItemClick = (difficulty) => {
+    setCurentDifficulty(difficulty);
+  };
+
+  return (
     <div>
-      <h1 onClick={hello}>I am the {"<App/ >"}</h1>
-      <Car onCarClick={hello}/>
+      <div>
+        <h1>Select your React Difficulty</h1>
+        <div className={Style.workspace}>
+          <MenuList onItemClick={onMenuListItemClick} difficulty={currentDifficulty} />
+          <DisplayDifficulty difficulty={currentDifficulty} />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
+
 
 export default App;
